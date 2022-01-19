@@ -12,26 +12,29 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Windows.Threading;
-using BeautyShop.AppData;
-
+using BeautyShop.Entities;
 
 namespace BeautyShop.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainPage.xaml
+    /// Логика взаимодействия для productsPage.xaml
     /// </summary>
-    public partial class MainPage : Page
+    public partial class productsPage : Page
     {
-        public MainPage()
+        public productsPage()
         {
             InitializeComponent();
-            
+            productsList.ItemsSource = DBContext.Context.Product.ToList();
         }
 
-        private void productBtn_Click(object sender, RoutedEventArgs e)
+        private void editBtn_Click(object sender, RoutedEventArgs e)
         {
-            FrameObj.mainFrame.Navigate(new productsPage()); 
+
+        }
+
+        private void salesHistoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

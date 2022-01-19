@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace BeautyShop.Entities
 {
-    class DataContext : DbContext
+    class DBContext : DbContext
     {
         private static DBEntities context { get; set; }
         public static DBEntities Context

@@ -21,6 +21,7 @@
                         x:Name="clientBtn"/>
                 <Button Style="{StaticResource mainBtn}"
                         Content="Товары"
+                        Click="productBtn_Click"
                         x:Name="productBtn"/>
             </StackPanel>
             <StackPanel Orientation="Vertical">
