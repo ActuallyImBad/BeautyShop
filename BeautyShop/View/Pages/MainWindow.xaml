@@ -11,23 +11,25 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Background="#FFE1E4FF" Orientation="Horizontal">
-            <Image Source=".//Resources/beauty_logo.png"
-                   Width="80" HorizontalAlignment="Left"
+        <WrapPanel Grid.Row="0" Background="#FFE1E4FF" Orientation="Horizontal" Width="Auto">
+            <Image Source="/Resources/beauty_logo.png"
+                   Width="Auto" HorizontalAlignment="Left"
                    Margin="5 0 0 0"/>
-            <Button x:Name="backBtn" Click="backBtn_Click"
+        </WrapPanel>
+        
+        <Button x:Name="backBtn" Click="backBtn_Click"
                     Width="150" Height="30" FontFamily="Tahoma" FontSize="17"
                     Foreground="White" Background="#FFFF4A6D" 
-                    Margin="450 0 0 0">Назад</Button>
-            <Button x:Name="faqBtn" Click="faqBtn_Click"
-                    Margin="5 0 0 0" Width="150"
+                    HorizontalAlignment="Right" Margin="0,0,40,0">Назад</Button>
+        
+        <Button x:Name="faqBtn" Click="faqBtn_Click"
+                    Margin="0,0,195,0" Width="150"
                     Height="30" Background="#FFFF4A6D" 
                     FontFamily="Tahoma" FontSize="17"
-                    Foreground="White" >FAQ</Button>
-
-        </StackPanel>
+                    Foreground="White" HorizontalAlignment="Right">FAQ</Button>
+        
         <StackPanel Grid.Row="1" VerticalAlignment="Center" >
-            <Image Source=".//Resources/beauty_logo.png" 
+            <Image Source="/Resources/beauty_logo.png" 
                    Width="500" Opacity=".1"/>
         </StackPanel>
         <Frame x:Name="mainFrm" Grid.Row="1" NavigationUIVisibility="Hidden"/>
