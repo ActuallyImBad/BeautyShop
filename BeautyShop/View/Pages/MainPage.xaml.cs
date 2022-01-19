@@ -12,32 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BeautyShop.AppData;
-using BeautyShop.View.Pages;
 
-
-namespace BeautyShop
+namespace BeautyShop.View.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
-            FrameObj.mainFrame = mainFrm;
-            mainFrm.Navigate(new MainPage());
-        }
-
-        private void backBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void faqBtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
