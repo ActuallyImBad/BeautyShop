@@ -6,8 +6,8 @@
     <Application.Resources>
         <Style TargetType="ComboBox" x:Key="mainCmb">
             <Setter Property="Margin" Value="10 0 0 0"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="30"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="FontSize" Value="17"/>
         </Style>
@@ -34,7 +34,7 @@
             <Setter Property="Margin" Value="5"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="mainTxt">
@@ -42,14 +42,14 @@
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontFamily" Value="Tahoma"/>
             <Setter Property="Margin" Value="10 0 0 0"/>
-            <Setter Property="Width" Value="150"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="220"/>
+            <Setter Property="Height" Value="30"/>
         </Style>
         
-        <Style TargetType="ListBoxItem" x:Key="LblRed">
+        <Style TargetType="ListView" x:Key="LblRed">
             <Style.Triggers>
-                <DataTrigger Binding="{Binding Product.IsActive}" Value="false">
-                    <Setter Property="Background" Value="Red"/>
+                <DataTrigger Binding="{Binding Product.IsActive}" Value="False">
+                    <Setter Property="Background" Value="Gray"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>

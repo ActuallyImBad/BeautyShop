@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BeautyShop.Entities;
+using BeautyShop.AppData;
 
 namespace BeautyShop.View.Pages
 {
@@ -24,15 +25,10 @@ namespace BeautyShop.View.Pages
         public productsPage()
         {
             InitializeComponent();
-            productsList.ItemsSource = DBContext.Context.Product.ToList();
+            productListV.ItemsSource = DBContext.Context.Product.ToList();
         }
 
-        private void editBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void salesHistoryBtn_Click(object sender, RoutedEventArgs e)
+        private void productListV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
