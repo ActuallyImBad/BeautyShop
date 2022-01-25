@@ -36,7 +36,7 @@ namespace BeautyShop.View.Pages
 
         private void addProductBtn_Click(object sender, RoutedEventArgs e)
         {
-            FrameObj.mainFrame.Navigate(new addProductPage());
+            FrameObj.mainFrame.Navigate(new addProductPage(null));
         }
     }
 }

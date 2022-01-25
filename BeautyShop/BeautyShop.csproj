@@ -64,11 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\sysdiagrams.cs">
+      <DependentUpon>ModelEF.tt</DependentUpon>
+    </Compile>
     <Compile Include="View\Pages\addProductPage.xaml.cs">
       <DependentUpon>addProductPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Pages\editNewPage.xaml.cs">
-      <DependentUpon>editNewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -142,10 +142,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Pages\editNewPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -200,6 +196,7 @@
       <DependentUpon>ModelEF.edmx</DependentUpon>
       <LastGenOutput>ModelEF.cs</LastGenOutput>
     </Content>
+    <Resource Include="Товары салона красоты\noimage.jpg" />
     <Resource Include="Товары салона красоты\1781670-1.jpg" />
     <Resource Include="Товары салона красоты\1781674-1.jpg" />
     <Resource Include="Товары салона красоты\1781675-1.jpg" />

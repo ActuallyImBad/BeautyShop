@@ -16,39 +16,48 @@
                 <TextBlock Text="Название:"
                            Style="{StaticResource productTxtb}"/>
                 <TextBox Name="titleTxt"
-                         Style="{StaticResource mainTxt}"/>
+                         Style="{StaticResource mainTxt}"
+                         Text="{Binding Title}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                 <TextBlock Text="Цена:"
                            Style="{StaticResource productTxtb}"/>
                 <TextBox Name="costTxt"
-                         Style="{StaticResource mainTxt}"/>
+                         Style="{StaticResource mainTxt}"
+                         Text="{Binding Cost}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                 <TextBlock Text="Описание:"
                            Style="{StaticResource productTxtb}"/>
                 <TextBox Name="descriprionTxt"
-                         Style="{StaticResource mainTxt}"/>
+                         Style="{StaticResource mainTxt}"
+                         Text="{Binding Description}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                 <TextBlock Text="Фотография товара:"
                            Style="{StaticResource productTxtb}"/>
                 <TextBox Name="imageTxt"
-                         Style="{StaticResource mainTxt}"/>
+                         Style="{StaticResource mainTxt}"
+                         Text="{Binding MainImagePath}"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                <TextBlock Text="Фотография товара:"
+                <TextBlock Text="Производитель:"
                            Style="{StaticResource productTxtb}"/>
                 <ComboBox Name="ownerCmbx"
-                          Style="{StaticResource mainCmb}"/>
+                          Style="{StaticResource mainCmb}"
+                          SelectedItem="{Binding Manufacturer}"
+                          SelectedValuePath="ID"
+                          DisplayMemberPath="Name"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                 <RadioButton Name="activeRb"
-                             Content="Доступен"
-                             Style="{StaticResource defaultRb}"/>
+                             Content="Активен"
+                             Style="{StaticResource defaultRb}"
+                             IsChecked="{Binding IsActive}"/>
                 <RadioButton Name="notActiveRb"
-                             Content="Не доступен"
-                             Style="{StaticResource defaultRb}"/>
+                             Content="Не активен"
+                             Style="{StaticResource defaultRb}"
+                             IsChecked="True"/>
             </StackPanel>
             <Button Name="saveBtn"
                     Click="saveBtn_Click"
