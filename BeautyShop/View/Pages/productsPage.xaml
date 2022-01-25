@@ -149,6 +149,11 @@
                     Style="{StaticResource mainBtn}"
                     Visibility="Hidden"
                     Click="deleteBtn_Click"/>
+            <Button x:Name="backBtn" Click="backBtn_Click"
+                    Width="150" Height="30" FontFamily="Tahoma" FontSize="17"
+                    Foreground="White" Background="#FFFF4A6D" 
+                    HorizontalAlignment="Right" 
+                    Content="Назад"/>
         </StackPanel>
     </Grid>
 </Page>

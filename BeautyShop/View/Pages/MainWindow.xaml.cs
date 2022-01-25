@@ -30,10 +30,7 @@ namespace BeautyShop
             mainFrm.Navigate(new MainPage());
         }
 
-        private void backBtn_Click(object sender, RoutedEventArgs e)
-        {
-            FrameObj.mainFrame.GoBack();
-        }
+
 
         private void faqBtn_Click(object sender, RoutedEventArgs e)
         {

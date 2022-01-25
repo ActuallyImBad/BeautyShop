@@ -35,6 +35,10 @@ namespace BeautyShop.View.Pages
             sortByCostCmbx.SelectedIndex = 0;
         }
 
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameObj.mainFrame.GoBack();
+        }
         private void Sorting()
         {
             var sortedItems = DBContext.Context.Product.ToList();

@@ -35,6 +35,10 @@ namespace BeautyShop.View.Pages
             DataContext = currentProduct;
         }
 
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FrameObj.mainFrame.GoBack();
+        }
         private void saveBtn_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();

@@ -59,10 +59,18 @@
                              Style="{StaticResource defaultRb}"
                              IsChecked="True"/>
             </StackPanel>
-            <Button Name="saveBtn"
-                    Click="saveBtn_Click"
-                    Style="{StaticResource mainBtn}"
-                    Content="Сохранить"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="saveBtn"
+                        Click="saveBtn_Click"
+                        Style="{StaticResource mainBtn}"
+                        Content="Сохранить"/>
+                <Button x:Name="backBtn" Click="backBtn_Click"
+                    Width="150" Height="30" FontFamily="Tahoma" FontSize="17"
+                    Foreground="White" Background="#FFFF4A6D"
+                    Content="Назад"/>
+            </StackPanel>
+
+            
         </StackPanel>
     </Grid>
 </Page>
