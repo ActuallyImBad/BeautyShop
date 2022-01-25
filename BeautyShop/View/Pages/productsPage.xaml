@@ -19,7 +19,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Center">
-            <TextBox Width="450" 
+            <TextBox Width="350" 
                  Height="30" 
                  VerticalAlignment="Top" 
                  Margin="20 10 20 0"
@@ -55,7 +55,21 @@
                       x:Name="ownerCmbx"
                       DisplayMemberPath="Name"
                       SelectedValuePath="ID"
-                      Width="250" SelectionChanged="ownerCmbx_SelectionChanged"/>
+                      Width="200" SelectionChanged="ownerCmbx_SelectionChanged"/>            
+            
+            <ComboBox Style="{StaticResource mainCmb}"
+                      x:Name="sortByCostCmbx"
+                      Width="100" 
+                      SelectionChanged="sortByCostCmbx_SelectionChanged"/>
+            <CheckBox Content="По убыванию"
+                      x:Name="ascDescCheck"
+                      FontSize="17"
+                      FontFamily="Tahoma"
+                      Margin="10 0 0 0"
+                      VerticalAlignment="Center"
+                      Checked="ascDescCheck_Checked"
+                      Unchecked="ascDescCheck_Unchecked"/>
+
         </StackPanel>
 
         <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"
@@ -128,6 +142,11 @@
                     Style="{StaticResource mainBtn}"
                     Visibility="Hidden"
                     Click="editBtn_Click"/>
+            <Button Content="Удалить"
+                    x:Name="deleteBtn"
+                    Style="{StaticResource mainBtn}"
+                    Visibility="Hidden"
+                    Click="deleteBtn_Click"/>
         </StackPanel>
     </Grid>
 </Page>

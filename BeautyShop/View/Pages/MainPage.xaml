@@ -15,10 +15,10 @@
             <StackPanel Orientation="Vertical">
                 <Button Style="{StaticResource mainBtn}"
                         Content="Услуги"
-                        x:Name="serviceBtn"/>
+                        x:Name="serviceBtn" IsEnabled="False"/>
                 <Button Style="{StaticResource mainBtn}"
                         Content="Клиенты"
-                        x:Name="clientBtn"/>
+                        x:Name="clientBtn" IsEnabled="False"/>
                 <Button Style="{StaticResource mainBtn}"
                         Content="Товары"
                         Click="productBtn_Click"
@@ -31,10 +31,10 @@
                         x:Name="addProductBtn"/>
                 <Button Style="{StaticResource mainBtn}"
                         Content="Сотрудники"
-                        x:Name="stuffBtn"/>
+                        x:Name="stuffBtn" IsEnabled="False"/>
                 <Button Style="{StaticResource mainBtn}"
                         Content="Компания"
-                        x:Name="companyBtn"/>
+                        x:Name="companyBtn" IsEnabled="False"/>
             </StackPanel>
         </StackPanel>
     </Grid>

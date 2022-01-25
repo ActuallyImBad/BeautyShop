@@ -30,42 +30,94 @@ namespace BeautyShop.View.Pages
             manufacturerCmb.Insert(0, new Manufacturer { Name = "Все производители" });
             ownerCmbx.ItemsSource = manufacturerCmb;
             ownerCmbx.SelectedIndex = 0;
+            sortByCostCmbx.Items.Insert(0, "");
+            sortByCostCmbx.Items.Insert(1, "Цена");
+            sortByCostCmbx.SelectedIndex = 0;
         }
 
-        private void productListV_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void Sorting()
         {
-
+            var sortedItems = DBContext.Context.Product.ToList();
+            if (ownerCmbx.SelectedIndex > 0)
+                sortedItems = sortedItems.Where(x => x.ManufacturerID == ownerCmbx.SelectedIndex).ToList();
+            if (string.IsNullOrWhiteSpace(searchTxt.Text) == false)
+            {
+                sortedItems = sortedItems.Where(x => x.Title.StartsWith(searchTxt.Text) || x.Description.StartsWith(searchTxt.Text)).ToList();
+            }
+            switch (sortByCostCmbx.SelectedIndex)
+            {
+                case 1:
+                    {
+                        if (ascDescCheck.IsChecked == true)
+                        {
+                            sortedItems = sortedItems.OrderByDescending(x => x.Cost).ToList();
+                        }
+                        else
+                        {
+                            sortedItems = sortedItems.OrderBy(x => x.Cost).ToList();
+                        }
+                        break;
+                    }
+            }
+            productListV.ItemsSource = sortedItems;
         }
-
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            productListV.ItemsSource = DBContext.Context.Product.Where(x => x.Title.StartsWith(searchTxt.Text) || x.Description.StartsWith(searchTxt.Text)).ToList();
+            Sorting();
         }
 
         private void ownerCmbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (ownerCmbx.SelectedIndex == 0)
-            {
-                productListV.ItemsSource = DBContext.Context.Product.ToList();
-            }
-            else
-            {
-                productListV.ItemsSource = DBContext.Context.Product.Where(x => x.ManufacturerID == ownerCmbx.SelectedIndex).ToList();
-            }
-            
+            Sorting();
         }
 
         private void productListV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             editBtn.Visibility = Visibility.Visible;
             historyBtn.Visibility = Visibility.Visible;
+            deleteBtn.Visibility = Visibility.Visible;
         }
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
         {
             var itemInfo = productListV.SelectedItem;
             FrameObj.mainFrame.Navigate(new addProductPage(itemInfo as Product));
+        }
+
+        private void deleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var itemToDelete = productListV.SelectedItem as Product;
+            if (MessageBox.Show($"Вы хотите удалить продукт №{itemToDelete.ID}?", "Удаление данных", MessageBoxButton.YesNo, 
+                MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    DBContext.Context.Product.Remove(itemToDelete);
+                    DBContext.Context.SaveChanges();
+                    MessageBox.Show("Данные удалены");
+                    productListV.ItemsSource = DBContext.Context.Product.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void sortByCostCmbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Sorting();
+        }
+
+        private void ascDescCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            Sorting();
+        }
+
+        private void ascDescCheck_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Sorting();
         }
     }
 }
