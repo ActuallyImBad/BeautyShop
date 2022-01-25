@@ -68,7 +68,7 @@ namespace BeautyShop.View.Pages
                 DBContext.Context.SaveChanges();
                 MessageBox.Show("Информация сохранена");
                 FrameObj.mainFrame.GoBack();
-
+                
             }
             catch (Exception ex)
             {

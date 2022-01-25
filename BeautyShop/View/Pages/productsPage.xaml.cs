@@ -83,6 +83,7 @@ namespace BeautyShop.View.Pages
         {
             var itemInfo = productListV.SelectedItem;
             FrameObj.mainFrame.Navigate(new addProductPage(itemInfo as Product));
+            productListV.ItemsSource = DBContext.Context.Product.ToList();
         }
 
         private void deleteBtn_Click(object sender, RoutedEventArgs e)

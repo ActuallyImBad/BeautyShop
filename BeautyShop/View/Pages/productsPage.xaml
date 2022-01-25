@@ -83,7 +83,9 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1">
+                    <Border BorderBrush="Black" 
+                            BorderThickness="1" 
+                            Background="{Binding colorBrush}">
                         <Grid Width="400" Height="330">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50"/>

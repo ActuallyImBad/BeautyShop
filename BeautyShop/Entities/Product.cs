@@ -11,7 +11,8 @@ namespace BeautyShop.Entities
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows.Media;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -52,6 +53,20 @@ namespace BeautyShop.Entities
                 else
                 {
                     return "Не активен";
+                }
+            }
+        }
+        public SolidColorBrush colorBrush
+        {
+            get
+            {
+                if (this.IsActive)
+                {
+                    return Brushes.Transparent;
+                }
+                else
+                {
+                    return Brushes.LightGray;
                 }
             }
         }
